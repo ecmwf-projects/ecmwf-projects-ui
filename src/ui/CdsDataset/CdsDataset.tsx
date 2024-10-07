@@ -5,7 +5,7 @@ import { CdsDatasetProps, CdsDatasetAPIProps } from './CdsDataset.types';
 
 
 export const CdsDataset = ({dataset}: CdsDatasetProps) => {
-  const RETRIEVE_API = 'https://cds-beta.climate.copernicus.eu/api/catalogue/v1/collections/'
+  const RETRIEVE_API = 'https://cds.climate.copernicus.eu/api/catalogue/v1/collections/'
   const [collection, setCollection] = useState({} as CdsDatasetAPIProps);
   const theme = useMantineTheme();
   const desktop = !useMediaQuery(`(max-width: ${theme.breakpoints.md})`);

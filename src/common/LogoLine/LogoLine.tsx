@@ -4,7 +4,7 @@ import { LogoLineProps } from './LogoLine.types';
 
 const LogoLine: React.FC<LogoLineProps> = ({children, ...props}) => {
 
-  props["style"] = props["style"] || {width: 150, height: 'auto'};
+  props["style"] = props["style"] || {width: 'auto', height: 40};
 
   const logos = children.map((item: React.ReactNode) => (
     cloneElement(item, props)

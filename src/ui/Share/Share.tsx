@@ -11,6 +11,7 @@ import {
 import { ShareActionIconProps, ShareButtonProps, ShareProps } from './Share.types';
 
 
+
 type Platforms = {
   [platform: string]: {
     sharer: string;
@@ -40,7 +41,7 @@ const PlatformProps: Platforms = {
 const ShareActionIcon = ({icon, size, tooltip, ...props}: ShareActionIconProps) => {
   return (
     <Tooltip label={tooltip} >
-      <ActionIcon  {...props} >
+      <ActionIcon size={50} {...props} >
         {icon}
       </ActionIcon>
     </Tooltip>

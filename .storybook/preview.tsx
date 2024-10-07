@@ -9,8 +9,9 @@ import {
   MantineProvider,
   useMantineColorScheme,
 } from '@mantine/core';
+import { withMantineThemes } from "storybook-addon-mantine";
 // theme.ts file from previous step
-import { theme } from '../src/theme';
+import { theme, c3s, cams, cems } from '../src/theme';
 
 const channel = addons.getChannel();
 
@@ -35,7 +36,28 @@ export const decorators = [
   (renderStory: any) => (
     <ColorSchemeWrapper>{renderStory()}</ColorSchemeWrapper>
   ),
-  (renderStory: any) => (
-    <MantineProvider theme={theme}>{renderStory()}</MantineProvider>
-  ),
+  withMantineThemes({
+    themes: [
+      {
+        id: "ecmwf",
+        name: "ECMWF Theme",
+        ...theme,
+      },
+      {
+        id: "c3s",
+        name: "C3S Theme",
+        ...c3s,
+      },
+      {
+        id: "cams",
+        name: "CAMS Theme",
+        ...cams,
+      },
+      {
+        id: "cems",
+        name: "CEMS Theme",
+        ...cems,
+      }
+    ],
+  }),
 ];
